@@ -1,0 +1,14 @@
+<div *ngIf="isLoading">Loading...</div>
+<div  *ngIf="!isLoading">
+    <ul *ngFor="let story of stories">
+        <li>
+            <a [href]="story.url" target="_blank">{{ story.title }}</a>
+        </li>
+    </ul>
+
+    <div class="pagination">
+        <button (click)="onPageChange(pageNumber - 1)" [disabled]="pageNumber <= 1">prev</button>
+        <span>Page {{ pageNumber }} of {{ totalPages }}</span>
+        <button (click)="onPageChange(pageNumber + 1)" [disabled]="pageNumber >= totalPages">next</button>
+    </div>
+</div>
