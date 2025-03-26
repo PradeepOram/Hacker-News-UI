@@ -1,4 +1,4 @@
-export interface Story {
-    title:string;
-    url?:string;
+export class StoryDto {
+    title:string='';
+    url?:string='';
 }

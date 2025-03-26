@@ -1,8 +1,8 @@
-import { Story } from "./story.model";
+import { StoryDto  } from "./story.model";
 
-export interface PageResponse {
-    page: number;
-    pageSize: number;
-    totalPages: number;
-    stories: Story[];    
+export class PageResponse {
+    page: number=1;
+    pageSize: number=10;
+    totalPages: number=0;
+    stories: StoryDto []=[];    
 }
