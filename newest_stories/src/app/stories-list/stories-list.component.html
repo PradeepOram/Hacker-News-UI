@@ -1,8 +1,10 @@
 <div *ngIf="isLoading">Loading...</div>
+<input type="text" [(ngModel)]="searchTerm" placeholder="Search stories..." (input)="onSearch()" />
+<div *ngIf="searchTerm && stories.length === 0">No stories found for "{{ searchTerm }}"</div>
 <div  *ngIf="!isLoading">
     <ul *ngFor="let story of stories">
         <li>
-            <a [href]="story.url" target="_blank">{{ story.title }}</a>
+            {{story.id}} : <a [href]="story.url" target="_blank">{{ story.title }}</a>
         </li>
     </ul>
 
